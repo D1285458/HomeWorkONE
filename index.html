@@ -9,7 +9,7 @@
         }
         body {
             display: flex;
-            justify-content: flex-start; /* Align items to the top */
+            justify-content: center; /* Center items vertically */
             align-items: center;
             flex-direction: column; /* Stack items vertically */
             height: 100vh;
@@ -62,27 +62,29 @@
     <p>敬請稍後再嘗試重整頁面</p>
 
     <button id="refreshButton" disabled>5 秒後再試一次</button>
+</div>
+<div class="container">
     <p>或者，您也可以先觀賞我們最新iPhone的介紹影片</p>
     <button onclick="window.location.href='https://www.youtube.com/watch?v=mFuyX1XgJFg'">觀看影片</button>
-
-    <script>
-        let countdown = 5;
-        const button = document.getElementById('refreshButton');
-        const interval = setInterval(() => {
-            countdown--;
-            if (countdown > 0) {
-                button.textContent = `${countdown} 秒後再試一次`;
-            } else {
-                button.textContent = '再試一次';
-                button.disabled = false;
-                clearInterval(interval);
-            }
-        }, 1000);
-
-        button.addEventListener('click', () => {
-            window.location.href = 'https://www.apple.com';
-        });
-    </script>
 </div>
+
+<script>
+    let countdown = 5;
+    const button = document.getElementById('refreshButton');
+    const interval = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+            button.textContent = `${countdown} 秒後再試一次`;
+        } else {
+            button.textContent = '再試一次';
+            button.disabled = false;
+            clearInterval(interval);
+        }
+    }, 1000);
+
+    button.addEventListener('click', () => {
+        window.location.href = 'https://www.apple.com';
+    });
+</script>
 </body>
 </html>
