@@ -6,35 +6,30 @@
     <style>
         html, body {
             height: 100%;
+            margin: 0;
         }
         body {
             display: flex;
-            justify-content: center; /* Center items vertically */
-            align-items: center;
-            flex-direction: column; /* Stack items vertically */
-            height: 100vh;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
             background-color: #ffffff; /* HEX value */
-            /*background-color: rgb(255, 255, 255); !* RGB value *!*/
-            /*background-color: cmyk(0, 0, 0, 0); !* CMYK value *!*/
             color: #333333;
-            margin: 0;
             background-image: url('https://www.apple.com/v/iphone-16e/b/images/overview/welcome/hero_endframe__chv2d1bwb51e_xlarge_2x.jpg');
-            background-size: 75%; /* Scale the image to 80% */
+            background-size: 75%; /* Scale the image to 75% */
             background-repeat: no-repeat;
             background-position: bottom center; /* Position the image at the bottom center */
             -webkit-user-select: none; /* Safari */
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
+            flex-direction: column; /* Stack items vertically */
         }
         .container {
             text-align: center;
             padding: 20px;
             border-radius: 10px;
-            margin-top: 20px; /* Add some margin to move the container down */
         }
         .container h1 {
-            font-size: 2em;
             margin-bottom: 0.5em;
         }
         .container p {
@@ -59,14 +54,13 @@
     </style>
 </head>
 <body>
+<img src="bar.jpeg" alt="Top Image" style="width: 100%; height: auto; position: absolute; top: 0; left: 0;">
 <div class="container">
     <h1>好的商品值得等待</h1>
     <p>由於目前Apple網站人流過多</p>
     <p>敬請稍後再嘗試重整頁面</p>
 
     <button id="refreshButton" disabled>5 秒後再試一次</button>
-</div>
-<div class="container">
     <p>或者，您也可以先觀賞我們最新iPhone的介紹影片</p>
     <button onclick="window.location.href='https://www.youtube.com/watch?v=mFuyX1XgJFg'">觀看影片</button>
 </div>
