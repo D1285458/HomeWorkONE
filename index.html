@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Apple台灣</title>
+    <title>Apple台灣-當機等候網頁</title>
     <style>
         html, body {
             height: 100%;
@@ -15,12 +15,15 @@
             height: 100vh;
             background-color: #f4f4f7; /* Updated background color */
             color: #333333;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             background-image: url('https://www.apple.com/tw/iphone/home/images/overview/consider_modals/environment/modal_trade_in__k5xx81wg61ei_large.jpg');
             background-size: 30%; /* Scale the image to 30% */
             background-repeat: no-repeat;
             background-position: bottom center; /* Position the image at the bottom center */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
         }
         .container {
             text-align: center;
