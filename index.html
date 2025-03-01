@@ -24,18 +24,28 @@
             user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
             flex-direction: column; /* Stack items vertically */
         }
-        .container {
+        .container, .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 20px;
             border-radius: 10px;
+        }
+        .container {
+            margin-top: 50px; /* Adjust top margin */
+            margin-bottom: 50px; /* Adjust bottom margin */
+        }
+        .video-container {
+            margin-top: 20px; /* Adjust top margin */
+            margin-bottom: 200px; /* Adjust bottom margin */
         }
         .container h1 {
             margin-bottom: 0.5em;
         }
-        .container p {
+        .container p, .video-container p {
             margin: 1em 0;
         }
-        .container button {
+        .container button, .video-container button {
             padding: 0.5em 1em;
             background-color: #add8e6;
             color: #333333;
@@ -48,7 +58,7 @@
             background-color: #d3d3d3;
             cursor: not-allowed;
         }
-        .container button:hover:enabled {
+        .container button:hover:enabled, .video-container button:hover:enabled {
             background-color: #87ceeb;
         }
     </style>
@@ -61,6 +71,8 @@
     <p>敬請稍後再嘗試重整頁面</p>
 
     <button id="refreshButton" disabled>5 秒後再試一次</button>
+</div>
+<div class="video-container">
     <p>或者，您也可以先觀賞我們最新iPhone的介紹影片</p>
     <button onclick="window.location.href='https://www.youtube.com/watch?v=mFuyX1XgJFg'">觀看影片</button>
 </div>
