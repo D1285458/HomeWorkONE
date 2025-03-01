@@ -66,9 +66,10 @@
 <div class="container">
     <h1>非常抱歉</h1>
     <p>由於目前Apple人流過多</p>
-    <p>敬請稍後再嘗試重整頁面</p>
+    <p>您目前已進入排隊序列</p>
+    <p>敬請您耐心等候</p>
 
-    <button id="refreshButton" disabled>5 秒後再試一次</button>
+    <button id="refreshButton" disabled>前面還有5位</button>
 </div>
 <div class="video-container">
     <p>或者，您也可以先觀賞我們最新iPhone的介紹影片</p>
@@ -81,9 +82,9 @@
     const interval = setInterval(() => {
         countdown--;
         if (countdown > 0) {
-            button.textContent = `${countdown} 秒後再試一次`;
+            button.textContent = `前面還有${countdown}位`;
         } else {
-            button.textContent = '再試一次';
+            button.textContent = '立即進入';
             button.disabled = false;
             clearInterval(interval);
         }
