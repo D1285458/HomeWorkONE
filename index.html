@@ -11,19 +11,19 @@
         }
         body {
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            background-color: #ffffff; /* HEX value */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            background-color: #ffffff; /* HEX值 */
             color: #333333;
             background-image: url('https://www.apple.com/v/iphone-16e/b/images/overview/welcome/hero_endframe__chv2d1bwb51e_xlarge_2x.jpg');
-            background-size: 75%; /* Scale the image to 75% */
+            background-size: 75%; /* 將圖像縮放到75% */
             background-repeat: no-repeat;
-            background-position: bottom center; /* Position the image at the bottom center */
+            background-position: bottom center; /* 將圖像定位在底部中心 */
             -webkit-user-select: none; /* Safari */
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
-            flex-direction: column; /* Stack items vertically */
+            user-select: none; /* 非前綴版本，目前支持Chrome、Opera和Edge */
+            flex-direction: column; /* 垂直堆疊項目 */
         }
         .container, .video-container {
             display: flex;
@@ -32,19 +32,19 @@
             text-align: center;
         }
         .container {
-            margin-bottom: 20px; /* Adjust bottom margin */
+            margin-bottom: 20px; /* 調整底部邊距 */
         }
         .video-container {
-            margin-top: 50px; /* Adjust top margin */
-            margin-bottom: 10px; /* Adjust bottom margin */
+            margin-top: 50px; /* 調整頂部邊距 */
+            margin-bottom: 10px; /* 調整底部邊距 */
         }
         .container h1, .container p, .video-container p {
-            margin: 0.5em 0; /* Unified margin for text elements */
+            margin: 0.5em 0; /* 統一文本元素的邊距 */
         }
         .container button, .video-container button {
-            margin-top: 0.5em; /* Unified margin for buttons */
+            margin-top: 0.5em; /* 統一按鈕的邊距 */
             padding: 0.5em 0.5em;
-            background-color: #e0e0e0; /* Lighter gray color */
+            background-color: #e0e0e0; /* 較淺的灰色 */
             color: #333333;
             border: none;
             border-radius: 5px;
@@ -57,7 +57,7 @@
         }
         .container button:hover:enabled, .video-container button:hover:enabled,
         .container button:focus, .video-container button:focus {
-            background-color: #c0c0c0; /* Change to #c0c0c0 when hovered or focused */
+            background-color: #c0c0c0; /* 當懸停或聚焦時變為#c0c0c0 */
         }
     </style>
 </head>
@@ -65,7 +65,7 @@
 <img src="bar.jpeg" alt="Top Image" style="width: 100%; height: auto; position: absolute; top: 0; left: 0;">
 <div class="container">
     <h1>非常抱歉</h1>
-    <p>由於目前Apple人流過多</p>
+    <p>目前Apple人流過多，正在進行人數管控</p>
     <p>您目前已進入排隊序列</p>
     <p>敬請您耐心等候</p>
 
@@ -77,8 +77,11 @@
 </div>
 
 <script>
-    let countdown = 5;
+    let randomQueue = Math.floor(Math.random() * 6) + 5; // 生成5到10之間的隨機數
+    let countdown = randomQueue;
     const button = document.getElementById('refreshButton');
+    button.textContent = `前面還有${countdown}位`;
+
     const interval = setInterval(() => {
         countdown--;
         if (countdown > 0) {
@@ -92,6 +95,11 @@
 
     button.addEventListener('click', () => {
         window.location.href = 'https://www.apple.com';
+    });
+
+    const topImage = document.querySelector('img[alt="Top Image"]');
+    topImage.addEventListener('click', () => {
+        location.reload();
     });
 </script>
 </body>
