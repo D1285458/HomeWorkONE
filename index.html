@@ -65,9 +65,9 @@
 <img src="bar.jpeg" alt="Top Image" style="width: 100%; height: auto; position: absolute; top: 0; left: 0;">
 <div class="container">
     <h1>非常抱歉</h1>
-    <p>目前Apple人流過多，正在進行人數管控</p>
-    <p>您目前已進入排隊序列</p>
-    <p>敬請您耐心等候</p>
+    <p>目前Apple人流過多，無法載入網頁</p>
+    <p>敬請你稍候再嘗試重新整理此頁面</p>
+    <p>感謝您的配合</p>
 
     <button id="refreshButton" disabled>前面還有5位</button>
 </div>
@@ -80,14 +80,14 @@
     let randomQueue = Math.floor(Math.random() * 6) + 5; // 生成5到10之間的隨機數
     let countdown = randomQueue;
     const button = document.getElementById('refreshButton');
-    button.textContent = `前面還有${countdown}位`;
+    button.textContent = `${countdown}秒後再試一次`;
 
     const interval = setInterval(() => {
         countdown--;
         if (countdown > 0) {
-            button.textContent = `前面還有${countdown}位`;
+            button.textContent = `${countdown}秒後再試一次`;
         } else {
-            button.textContent = '立即進入';
+            button.textContent = '再試一次';
             button.disabled = false;
             clearInterval(interval);
         }
